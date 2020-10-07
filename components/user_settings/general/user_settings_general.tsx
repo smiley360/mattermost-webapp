@@ -467,6 +467,7 @@ export class UserSettingsGeneralTab extends React.Component<Props, State> {
         const {formatMessage} = this.props.intl;
 
         let emailSection;
+        /* Removing this section so the user cannot change their email address -Seth.
         if (this.props.activeSection === 'email') {
             const emailVerificationEnabled = this.props.requireEmailVerification;
             const inputs = [];
@@ -756,7 +757,7 @@ export class UserSettingsGeneralTab extends React.Component<Props, State> {
                     updateSection={this.updateSection}
                 />
             );
-        }
+        }*/
 
         return emailSection;
     }
@@ -1031,6 +1032,7 @@ export class UserSettingsGeneralTab extends React.Component<Props, State> {
         }
 
         let usernameSection;
+        /* Removed so the user does not change their username -Seth
         if (this.props.activeSection === 'username') {
             let extraInfo;
             let submit = null;
@@ -1110,7 +1112,7 @@ export class UserSettingsGeneralTab extends React.Component<Props, State> {
                     updateSection={this.updateSection}
                 />
             );
-        }
+        }*/
 
         let positionSection;
         if (this.props.activeSection === 'position') {
@@ -1214,7 +1216,7 @@ export class UserSettingsGeneralTab extends React.Component<Props, State> {
             );
         }
 
-        const emailSection = this.createEmailSection();
+        const emailSection = this.createEmailSection(); 
 
         let pictureSection;
         if (this.props.activeSection === 'picture') {

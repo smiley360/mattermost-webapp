@@ -633,6 +633,7 @@ class LoginController extends React.PureComponent {
             );
         }
 
+        /* Removing forgot password links -Seth
         if (usernameSigninEnabled || emailSigninEnabled) {
             loginControls.push(
                 <div
@@ -648,7 +649,7 @@ class LoginController extends React.PureComponent {
                     </Link>
                 </div>,
             );
-        }
+        }*/
 
         if ((emailSigninEnabled || usernameSigninEnabled || ldapEnabled) && (gitlabSigninEnabled || googleSigninEnabled || samlSigninEnabled || office365SigninEnabled)) {
             loginControls.push(

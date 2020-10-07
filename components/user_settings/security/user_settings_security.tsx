@@ -979,7 +979,7 @@ export default class SecurityTab extends React.PureComponent<Props, State> {
                         />
                     </h3>
                     <div className='divider-dark first'/>
-                    {passwordSection}
+                    {/* passwordSection -Seth. */}
                     <div className='divider-light'/>
                     <MfaSection
                         active={this.props.activeSection === SECTION_MFA}
