@@ -360,6 +360,7 @@ class MainMenu extends React.PureComponent {
                         />
                     </SystemPermissionGate>
                 </Menu.Group>
+                {/* Removing this entire group, since it hits Mattermost external links -Seth.
                 <Menu.Group>
                     <Menu.ItemExternalLink
                         id='helpLink'
@@ -402,6 +403,8 @@ class MainMenu extends React.PureComponent {
                         icon={this.props.mobile && <i className='fa fa-info'/>}
                     />
                 </Menu.Group>
+                */
+                }
                 <Menu.Group>
                     <Menu.ItemAction
                         id='logout'
