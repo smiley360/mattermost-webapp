@@ -114,7 +114,7 @@ export default class TutorialIntroScreens extends React.PureComponent {
                 <h1>
                     <FormattedMessage
                         id='tutorial_intro.screenOne.title2'
-                        defaultMessage='Mattermost'
+                        defaultMessage='Loyalty360'
                     />
                 </h1>
                 <p>
@@ -147,7 +147,7 @@ export default class TutorialIntroScreens extends React.PureComponent {
             appDownloadLink = (
                 <FormattedMessage
                     id='tutorial_intro.mobileApps'
-                    defaultMessage='Install the apps for {link} for easy access and notifications on the go.'
+                    defaultMessage=''
                     values={{
                         link: (
                             <a
@@ -198,12 +198,18 @@ export default class TutorialIntroScreens extends React.PureComponent {
                 </p>
                 <p>
                     <FormattedMessage
+                        id='tutorial_intro.screenTwo.body1.5'
+                        defaultMessage='Communication happens in public discussion channels, private channels and direct messages.'
+                    />
+                </p>
+                <p>
+                    <FormattedMessage
                         id='tutorial_intro.screenTwo.body2'
                         defaultMessage='Everything is archived and searchable from any web-enabled desktop, laptop or phone.'
                     />
                 </p>
-                {appDownloadLink}
-                {appDownloadImage}
+                {/* appDownloadLink */}
+                {/* appDownloadImage */}
                 {circles}
             </div>
         );
@@ -213,7 +219,8 @@ export default class TutorialIntroScreens extends React.PureComponent {
         let inviteModalLink;
         let inviteText;
 
-        if (!this.props.isLicensed || !this.props.restrictTeamInvite) {
+        /* Removed -Seth.
+        if ( !this.props.isLicensed || !this.props.restrictTeamInvite) {
             inviteModalLink = (
                 <ModalToggleButtonRedux
                     id='tutorialIntroInvite'
@@ -238,10 +245,12 @@ export default class TutorialIntroScreens extends React.PureComponent {
                 </p>
             );
         }
+        */
 
         const circles = this.createCircles();
 
         let supportInfo = null;
+        /* -Seth.
         if (this.props.supportEmail) {
             supportInfo = (
                 <p id='supportInfo'>
@@ -260,6 +269,7 @@ export default class TutorialIntroScreens extends React.PureComponent {
                 </p>
             );
         }
+        */
 
         return (
             <div id='tutorialIntroThree'>

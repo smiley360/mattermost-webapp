@@ -607,6 +607,7 @@ class LoginController extends React.PureComponent {
             );
         }
 
+        /* Removing signup -Seth
         if (this.props.enableOpenServer && this.checkSignUpEnabled()) {
             loginControls.push(
                 <div
@@ -631,7 +632,7 @@ class LoginController extends React.PureComponent {
                     </span>
                 </div>,
             );
-        }
+        }*/
 
         /* Removing forgot password links -Seth
         if (usernameSigninEnabled || emailSigninEnabled) {

@@ -219,6 +219,7 @@ class MainMenu extends React.PureComponent {
                         icon={this.props.mobile && <i className='fa fa-cog'/>}
                     />
                 </Menu.Group>
+                {/* Removing this option -Seth
                 <Menu.Group>
                     <TeamPermissionGate
                         teamId={this.props.teamId}
@@ -237,9 +238,10 @@ class MainMenu extends React.PureComponent {
                         teamId={this.props.teamId}
                         permissions={[Permissions.ADD_USER_TO_TEAM, Permissions.INVITE_GUEST]}
                     >
-                        {this.shouldShowUpgradeModal() ? upgradeCloudModal : invitePeopleModal}
+                        { this.shouldShowUpgradeModal() ? upgradeCloudModal : invitePeopleModal }
                     </TeamPermissionGate>
                 </Menu.Group>
+                -Seth */}
                 <Menu.Group>
                     <TeamPermissionGate
                         teamId={this.props.teamId}
@@ -295,6 +297,7 @@ class MainMenu extends React.PureComponent {
                         />
                     </TeamPermissionGate>
                 </Menu.Group>
+                {/* -Seth Remove Team
                 <Menu.Group>
                     <SystemPermissionGate permissions={[Permissions.CREATE_TEAM]}>
                         <Menu.ItemLink
@@ -320,6 +323,7 @@ class MainMenu extends React.PureComponent {
                         icon={this.props.mobile && <LeaveTeamIcon/>}
                     />
                 </Menu.Group>
+                -Seth Remove Team */}
                 <Menu.Group>
                     {pluginItems}
                 </Menu.Group>
@@ -403,8 +407,6 @@ class MainMenu extends React.PureComponent {
                         icon={this.props.mobile && <i className='fa fa-info'/>}
                     />
                 </Menu.Group>
-                */
-                }
                 <Menu.Group>
                     <Menu.ItemAction
                         id='logout'
@@ -413,6 +415,8 @@ class MainMenu extends React.PureComponent {
                         icon={this.props.mobile && <i className='fa fa-sign-out'/>}
                     />
                 </Menu.Group>
+                */
+                }
             </Menu>
         );
     }

@@ -751,7 +751,7 @@ class LegacySidebar extends React.PureComponent {
 
                     {this.renderOrderedChannels()}
                 </div>
-                {quickSwitchText}
+                {/* quickSwitchText Removed -Seth.*/}
             </div>
         );
     }

@@ -321,6 +321,7 @@ export function createDefaultIntroMessage(channel, centeredIntro, enableUserCrea
             id='channelIntro'
             className={'channel-intro ' + centeredIntro}
         >
+        {/* --Removing Intro title stuff -Seth
             <h2 className='channel-intro__title'>
                 <FormattedMessage
                     id='intro_messages.beginning'
@@ -353,6 +354,7 @@ export function createDefaultIntroMessage(channel, centeredIntro, enableUserCrea
             {teamInviteLink}
             {setHeaderButton}
             <br/>
+        */}
         </div>
     );
 }
