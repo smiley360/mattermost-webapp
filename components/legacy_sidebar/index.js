@@ -15,7 +15,7 @@ import {
 import Permissions from 'mattermost-redux/constants/permissions';
 import {getConfig} from 'mattermost-redux/selectors/entities/general';
 import {getBool as getBoolPreference, getSidebarPreferences} from 'mattermost-redux/selectors/entities/preferences';
-import {getCurrentUser} from 'mattermost-redux/selectors/entities/users';
+import {getCurrentUser, isCurrentUserSystemAdmin} from 'mattermost-redux/selectors/entities/users';
 import {haveITeamPermission} from 'mattermost-redux/selectors/entities/roles';
 import {getCurrentTeam} from 'mattermost-redux/selectors/entities/teams';
 
@@ -35,7 +35,7 @@ function mapStateToProps(state) {
     let canCreatePublicChannel = false;
     let canCreatePrivateChannel = false;
 
-    if (currentTeam) {
+    if (currentTeam && isCurrentUserSystemAdmin(state)) {
         canCreatePublicChannel = haveITeamPermission(state, {team: currentTeam.id, permission: Permissions.CREATE_PUBLIC_CHANNEL});
         canCreatePrivateChannel = haveITeamPermission(state, {team: currentTeam.id, permission: Permissions.CREATE_PRIVATE_CHANNEL});
     }

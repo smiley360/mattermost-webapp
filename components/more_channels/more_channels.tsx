@@ -289,7 +289,6 @@ export default class MoreChannels extends React.PureComponent<Props, State> {
                             defaultMessage='More Channels'
                         />
                     </Modal.Title>
-                    {createNewChannelButton}
                 </Modal.Header>
                 <Modal.Body>
                     {body}
