@@ -1,5 +1,39 @@
 # Mattermost
 
+SML Instructions:
+
+--------------------
+
+Building your changes to a deployable zip
+- Use npm version 10 or greater (nvm install 10)
+- cd mattermost-server
+- make build
+- make build-client
+- make package
+
+Deploy to Staging Server
+- Copy to server ("scp dist/mattermost-team-linux-amd64.tar.gz mattermost-staging:")
+- SSH into the mattermost-staging server
+- Remove contents of our old temp directory we used to deploy ("rm -rf tmp/*")
+- Move the file into the temp directory ("mv mattermost-team-linux-amd64.tar.gz tmp/")
+- Change directory to the tmp directory ("cd tmp/")
+- Unzip the file ("gunzip mattermost-team-linux-amd64.tar.gz")
+- Untar the file ("tar -xvf mattermost-team-linux-amd64.tar")
+- You should now have a mattermost directory within your $HOME/tmp/ directory
+- Copy items we need from the old mattermost deploy ("sudo cp -rfp /opt/mattermost/data mattermost/")
+- Copy the plugins we need from the old mattermost deploy ("sudo cp -rfp /opt/mattermost/plugins mattermost$
+- Copy the config.json from the old deploy ("sudo cp -rfp /opt/mattermost/config/config.json mattermost/con$
+- Remove the old backup ("rm -rf /opt/mattermost.bak")
+- Stop the running mattermost service ("sudo systemctl stop mattermost")
+- Backup the existing mattermost deploy ("sudo mv /opt/mattermost /opt/mattermost.bak")
+- Deploy the new mattermost ("sudo mv $HOME/tmp/mattermost /opt/mattermost")
+- Startup mattermost again ("sudo systemctrl start mattermost")
+
+Deploy to Production Server
+- (Same steps as above, but with the production server)
+
+--------------------
+
 Mattermost is an open source, self-hosted Slack-alternative from [https://mattermost.org](https://mattermost.org).
 
 It's written in Golang and React and runs as a single Linux binary with MySQL or Postgres. Every month on the 16th [a new compiled version is released under an MIT license](https://www.mattermost.org/download/).
